@@ -18,7 +18,7 @@ export default function DialogComment(props: DialogCommentProps) {
   return (
     <Dialog onClose={handleClose} open={open}>
       <DialogTitle sx={{ padding: 0, textAlign: "center" }}>
-        <h3>Add Comment</h3>
+        Agrega Comentario
       </DialogTitle>
       <Divider />
       <DialogContent>

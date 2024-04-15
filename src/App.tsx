@@ -1,10 +1,10 @@
 import "./index.css";
-import FeatureList from "./presentation/FeatureList";
+import Features from "./presentation/Features";
 
 export default function App() {
   return (
     <div className="main">
-      <FeatureList />
+      <Features />
     </div>
   );
 }

@@ -34,19 +34,3 @@ h1, h2, h3{
   font-weight: bold; 
 }
 
-h5{
-  color: gray;
-  font-weight: bold; 
-}
-
-.header_features {
-  background-color: coral;
-  color: white;
-  font-weight: bold; 
-  text-align: center;
-}
-
-.btn_dialog{
-  color: coral;
-}
-
