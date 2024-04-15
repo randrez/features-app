@@ -9,14 +9,14 @@ import MenuItem from "@mui/material/MenuItem";
 import { HeaderProps } from "./HeaderProps";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Check from "@mui/icons-material/Check";
-import '../../styles/feature.css'
+import "../../styles/feature.css";
 
 export default function HeaderFeatures(props: HeaderProps) {
   const { checkedList, onSelectItemMenu } = props;
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [openMenu, setOpenMenu] = useState(false);
 
-  const handleOpenMenu = (event: React.MouseEvent<HTMLElement>) => { 
+  const handleOpenMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
     setOpenMenu(true);
   };
@@ -25,22 +25,32 @@ export default function HeaderFeatures(props: HeaderProps) {
     setOpenMenu(false);
   };
 
-  const menuItems = ["md", "ml", "ms", "mw", "me", "mi", "mb", "mlg"];
+  const menuItems = [
+    "md",
+    "ml",
+    "ms",
+    "mw",
+    "me",
+    "mi",
+    "mb",
+    "mlg",
+    "limpiar",
+  ];
 
   const handleItemClick = (item: string) => {
     onSelectItemMenu(item);
-    setOpenMenu(false)
+    setOpenMenu(false);
   };
 
   return (
     <AppBar position="static" className="app_bar">
       <Toolbar variant="dense" className="toolbar">
         <IconButton
+          className="icon_button"
           edge="start"
           color="inherit"
           aria-label="menu"
           onClick={handleOpenMenu}
-          sx={{ mr: 2 }}
         >
           <FilterList />
         </IconButton>

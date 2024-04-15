@@ -14,10 +14,28 @@ h5 {
   color: coral;
 }
 
-.app_bar{
-    width: "100%";
+.app_bar {
+  width: "100%";
 }
 
-.toolbar{
-    background-color: coral;
+.toolbar {
+  background-color: coral;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button {
+  color: coral;
+}
+
+.icon_comment {
+  color: coral;
+}
+
+.icon_button{
+    margin: 2;
 }

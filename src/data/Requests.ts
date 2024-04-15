@@ -4,7 +4,7 @@ const request = {
         return `features?page=${page}&per_page=${perPage}${magTypesQueryParam}`;
     },
     fetchFeatureComments: (featureId: number) => {
-        return `features/${featureId}/comments`;
+        return `features/${featureId}/comment`;
     }
 };
 

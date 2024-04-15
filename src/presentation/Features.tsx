@@ -5,9 +5,9 @@ import DialogComment from "./components/DialogComment";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import HeaderFeatures from "./components/HeaderFeatures";
-import Axios from "../data/Axios";
-import Request from "../data/Requests";
-import List from "./components/List";
+import axios from "../data/Axios";
+import request from "../data/Requests";
+import ItemsFeature from "./components/ItemsFeature";
 
 export default function Features() {
   const [open, setOpen] = useState(false);
@@ -25,8 +25,8 @@ export default function Features() {
     async function fetchData() {
       setLoading(true);
       try {
-        const response = await Axios.get(
-          Request.fetchFilterFeatures(currentPage, perPage, checkedList)
+        const response = await axios.get(
+          request.fetchFilterFeatures(currentPage, perPage, checkedList)
         );
         const data = response.data.data;
         const pagination = response.data.pagination;
@@ -74,27 +74,23 @@ export default function Features() {
   };
 
   const handleOnSelectChecked = (item:string) => {
-    setCheckedList([...checkedList, item]);
+    if(item == "limpiar"){
+      setCheckedList([]);
+    }else{
+      setCheckedList([...checkedList, item]);
+    }
   };
 
   return (
     <div className="column" style={{ height: "100%", width: "100%" }}>
       <HeaderFeatures checkedList={checkedList} onSelectItemMenu={handleOnSelectChecked} />
-      <div style={{ height: "100%", width: "100%" }}>
+      <section style={{ height: "100%", width: "100%" }}>
         {loading ? (
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100vh",
-              width: "100%",
-            }}
-          >
-            <CircularProgress size={100} style={{ color: "coral" }} />
+          <Box className="box">
+            <CircularProgress size={100} style={{ color: 'coral' }} />
           </Box>
         ) : (
-          <List
+          <ItemsFeature
             features={features}
             currentPage={currentPage}
             perPage={perPage}
@@ -103,7 +99,7 @@ export default function Features() {
             onSelectFeature={handleCommentClick}
           />
         )}
-      </div>
+      </section>
       <DialogComment
         featureTitle={featureTitle}
         featureId={featureId}
