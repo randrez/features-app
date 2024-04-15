@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-header{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main .row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, h3{
+  color: coral;
+  font-weight: bold; 
+}
+
+h5{
+  color: gray;
+  font-weight: bold; 
+}
+
+.header_features {
+  background-color: coral;
+  color: white;
+  font-weight: bold; 
+  text-align: center;
+}
+
+.btn_dialog{
+  color: coral;
+}
+
